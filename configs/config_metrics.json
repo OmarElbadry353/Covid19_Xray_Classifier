@@ -1,0 +1,16 @@
+{
+    "results": {
+        "file": "experiments/NAME/results/online/results.json",
+        "performance_dir": "experiments/NAME/results/analysis/"
+    },
+    "dataset": {
+        "class_mode": "categorical",
+        "comment": "You need to adjust the classes and target_names variables to match your desired setting (binary, ternary or quaternary.",
+        "classes": [0,1,2],
+        "target_names": ["NORMAL", "COVID", "VIRAL PNEUMONIA"],
+        "target_names_2": ["PNEUMONIA", "COVID"],
+        "target_names_3": ["NORMAL", "COVID", "VIRAL PNEUMONIA"],
+        "target_names_4": ["NORMAL", "COVID", "PNEUMONIA BACTERIA", "PNEUMONIA VIRUS"],
+        "color_mode": "rgb"
+    }
+}

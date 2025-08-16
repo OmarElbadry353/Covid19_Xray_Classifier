@@ -1,0 +1,53 @@
+{
+    "comment": "This is a simple configuration file, without kfold cross validation",
+    "exp": {
+        "name": "NAME"
+    },
+    "mode": "train",
+    "mode_comment": "'eval' or 'train'",
+    "tester": {
+        "checkpoint_path": "experiments/NAME/checkpoints/model.hdf5"
+    },
+    "model": {
+        "backbone": "inception",
+        "classifier": "zhang",
+        "loss": "categorical_crossentropy",
+        "learning_rate": 0.0001,
+        "optimizer": "adam",
+        "lr_schedule": "exp",
+        "resize_shape": [512,512],
+        "input_shape":[512,512,3]
+    },
+    "trainer": {
+        "num_epochs": 20,
+        "batch_size": 8,
+        "validation_split": 0.1,
+        "verbose_training": 1,
+        "callbacks": true
+    },
+    "callbacks": {
+        "checkpoint_monitor": "val_loss",
+        "checkpoint_mode": "auto",
+        "checkpoint_save_best_only": true,
+        "checkpoint_save_weights_only": true,
+        "checkpoint_verbose": true,
+        "tensorboard_write_graph": true
+    },
+    "dataset": {
+        "comment": "The data need to be in their respective class' folder, i.e. train_data/0 for class 0, train_data/1 for class 1, etc.",
+        "train": "Covid19-dataset/train",
+        "test": "Covid19-dataset/test",
+        "class_mode": "categorical",
+        "classes": [0,1,2],
+        "color_mode": "rgb"
+    },
+    "devices_comment": "Which GPU to use, if you have only one then set id equal to 1. If you want to use more than one then you may have to tweak the code. I used only one GPU, namely the third (id:3).",
+    "devices":{
+        "gpus":[
+            1
+        ],
+        "gpu":{
+            "id":"2"
+        }
+    }
+}

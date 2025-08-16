@@ -1,0 +1,12 @@
+data/
+.vscode/
+__pycache__/
+experiments/
+experiments.old/
+experiments.2class/
+experiments.3class/
+experiments.4class/
+main_cp.py
+gradcam_output/
+gradcam_output.old/
+.ipynb*/
